@@ -2,7 +2,7 @@
 
 A deep learning-based chest X-ray classifier built using DenseNet121 architecture for medical image diagnosis. This project includes both a Jupyter notebook for model training and a Flask web application for inference.
 
-![Chest X-Ray Analysis](Grab-CAM.png)
+![Chest X-Ray Analysis](images/Grab-CAM.png)
 
 ## Overview
 
