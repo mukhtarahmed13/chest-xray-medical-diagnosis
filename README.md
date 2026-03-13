@@ -2,7 +2,7 @@
 
 A deep learning-based chest X-ray classifier built using DenseNet121 architecture for medical image diagnosis. This project includes both a Jupyter notebook for model training and a Flask web application for inference.
 
-![Chest X-Ray Analysis](images/xray-header-image.png)
+![Chest X-Ray Analysis](Grab-CAM.png)
 
 ## Overview
 
@@ -69,7 +69,7 @@ pip install -r requirements.txt
 
 Open and run the Jupyter notebook:
 ```bash
-jupyter notebook Chest_X-Ray_DenseNet121_Classifier_.ipynb
+Jupyter Notebook Chest_X-Ray_DenseNet121_Classifier_.ipynb
 ```
 
 The notebook covers:
@@ -139,7 +139,7 @@ The project includes **GradCAM** (Gradient-weighted Class Activation Mapping) vi
 
 ## Requirements
 
-See `requirements.txt` for full list of dependencies:
+See `requirements.txt` for the full list of dependencies:
 - tensorflow>=2.0.0
 - keras
 - numpy
