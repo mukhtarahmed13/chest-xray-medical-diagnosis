@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chest X-Ray Medical Diagnosis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏥 Chest X-Ray Medical Diagnosis</h1>
+            <p>AI-powered diagnosis with Deep Learning and Grad-CAM visualization</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <input type="file" id="fileInput" accept="image/*" hidden>
+                <div class="upload-content">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <h3>Upload X-Ray Image</h3>
+                    <p>Click to browse or drag and drop</p>
+                    <p class="file-types">Supports: PNG, JPG, JPEG</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <label for="threshold">Detection Threshold: <span id="thresholdValue">0.5</span></label>
+                <input type="range" id="threshold" min="0" max="1" step="0.05" value="0.5">
+                <button id="analyzeBtn" disabled>Analyze X-Ray</button>
+            </div>
+        </div>
+
+        <div id="previewSection" class="preview-section" style="display: none;">
+            <h2>Uploaded Image</h2>
+            <img id="preview" alt="X-ray preview">
+        </div>
+
+        <div id="loadingSection" class="loading-section" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing X-ray image...</p>
+        </div>
+
+        <div id="resultsSection" class="results-section" style="display: none;">
+            <h2>📊 Diagnosis Results</h2>
+            <div id="predictions" class="predictions"></div>
+
+            <div id="gradcamSection" style="display: none;">
+                <h2>🔍 Grad-CAM Visualization</h2>
+                <p class="gradcam-description">
+                    Heatmaps show where the model focused its attention when making predictions.
+                    Red areas indicate high attention, blue areas indicate low attention.
+                </p>
+                <div id="gradcams" class="gradcam-grid"></div>
+            </div>
+        </div>
+
+        <div id="errorSection" class="error-section" style="display: none;">
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
